@@ -1,0 +1,120 @@
+;	===Memory mapping of booting
+;	00000000	->	00000500	BIOS low [Reserved]
+;	00000501	->	00007BFF	Boot Sector Stack
+;	00007C00	->	00007DFF	Boot Sector [Reserved]
+;	00007E00	->	00007FFF	Free
+;	00008000	->	00008FFF	Free
+;	00009000	->	0000EFFF	
+;	0000F000	->	0000FFFF	System informations
+;				0000F000	word	System Total Memory size	
+;				0000F100	dword	
+
+;	====Memory mapping of Runtime 32 bit protect mode
+;	00000000	->	00000FFF	Free	[4k]
+;	00001000	->	00004FFF	Process contro blocks [16k]
+;				+00h		dword	pid:process identifier
+;				+04h		dword	parent pid
+;				+10h		dword	mlocation:physical loaction of process code in memory
+;				+14h		dword	used syscall TSS descriptor number, -1 not use
+;				+20h		dword	tickcount:sum of clock tick count used
+;				+30h		byte	status:process status [0=terminated,1=ready, 2=running, 3=sleep, 4=zombie]
+;				+31h		byte	pcb status[0=free, 1=used]
+;				+34h		dword	wait pid
+
+
+PCB DEFINATION
+
+	Pcb_strcuct:
+	+00h	dword		进程PID
+	+04h	dword		父进程PID
+	+08h	dword		保留
+	+0ch	dword		保留
+	+10h	dword		镜像在物理内存中的起始地址
+	+14h	dword		进程所使用的系统调用TSS描述符索引号
+	+18h	dword		保留
+	+1ch	dword		保留
+	+20h	dword		进程Tick数
+	+24h	dword		保留
+	+28h	dword		保留
+	+2ch	dword		保留
+	+30h	byte		进程状态
+	+31h	byte		PCB状态
+	+32h	word		保留
+    +34h    dword		正在等待的进程PID
+	+38h	dword		保留
+	+3ch	dword		保留
+		
+;				00004F40
+;				00004FA0	
+;				00004FB0	
+;				00004FC0	
+;				00004FD0	
+;				00004FE0
+;				00004FF0	dword 	number of current running process
+;				00004FF4	dword	base of current running process, =PCB_TABLE_BASE+pcb_current_no*PCB_SIZE
+;				00004FF8	dword	total count of processes in current system
+
+;	00003000	->	00003FFF	Free	[4k]
+;	00004000	->	00004FFF	Free	[4k]
+;	00005000	->	00005FFF	Free	[4k]
+;				
+;	00006000	->	00006FFF	Free	[4k]
+;	00007000	->	00007FFF	Free	[4k]
+;	00008000	->	00008FFF	Free	[4k]
+;				00008000	word	row_start-Number of start row in current screen
+;				00008002	word	x_cursor-Col of Cursor. 
+;				00008004	word	y_cursor-Row of Cursor. 
+
+;	00009000	->	0000EFFF	Display String temp buffer
+;	0000F000	->	0000FFFF	System informations [4K]
+;				0000F000	dword	System Total Memory size
+;				0000F008	dword	Pid Init
+;				0000F010	dword	System Tick count
+;				0000F020	byte	keyboard LEDS stauts change 0:no change 1:changed 
+;				0000F021	byte	keyboard LEDS changed num : 0 = capsl 1 = numl 2 = scrl
+;				
+
+;	0000F100	->	0000F1FF	Keyboard Ascii Code Buffer
+;				0000F100->0000F17F Queue buffer 128 bytes
+;				0000F190	byte	Queue buffer head	
+;				0000F1A0	byte	Queue buffer tail
+;				0000F1B0	byte	Queue data count
+
+;	00010000	->  0004FFFF	Kernel Bin   
+;	00050000	->  0006FFFF 	Stack
+;				0005FFF0		16 bit Kernel stack top
+;				0006C000		32 bit Kernel stack top
+;				0006D000		esp0=6D000-50000
+;				0006E000		esp1=6E000-50000
+;				0006F000		esp2=6F000-50000		
+;	00070000	->	00090000	Free
+
+;	00090000	->	0009FFFF	Reserved
+
+;	000A0000	->  000AFFFF	Screen access area [Reserved]
+;	000B0000	->  000FFFFF	Bios [Reserved]
+;	= 1M Begin
+;	00100000	->	0027FFFF	diskette image
+;	00280000	->	0028FFFF	diskette fat
+;	00290000	->	0029FFFF	Low Memory
+;	002A0000	->	002A7FFF	TSS block of interrupts
+;	002A8000	->	002AFFFF	TSS block of system calls - 256 entries	
+;	002B0000	->	002B0FFF	Page Directory Table:4k
+;	002B1000	->	002BFFFF	Free
+;	002C0000	->	002FFFFF	Stacks of intterupts[per stack 1024 bytes, Max 256 stacks]
+;	= 3M Begin
+;	00300000	->	003FFFFF	Stacks of syscalls[per stack 4096 bytes, Max 256 stacks]
+;	= 4M Begin
+;	00400000	->	007FFFFF	Page Table Entry  4M reserved for MAX 4G Memory
+;	= 8M Begin
+;	00800000	->	009FFFFF	TSS block of processes [(128 bytes tss data + 8192 bytes IO map)*250 processes]
+;	= 10M Begin
+;	00A00000	->	0FA00000	Application mem, One process use 1M byte memory (1M*250)
+;				code  segment:0-100000
+;				data  segment:0-100000
+;				stack segment:0-100000		esp = 0FFFF0
+;	
+;	
+
+
+

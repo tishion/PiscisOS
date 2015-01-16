@@ -1,0 +1,30 @@
+<NotepadPlus>
+    <Session activeView="1">
+        <mainView activeIndex="0">
+            <File firstVisibleLine="1103" xOffset="0" scrollWidth="1760" startPos="24011" endPos="24011" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\pkernel.asm" />
+            <File firstVisibleLine="11" xOffset="0" scrollWidth="616" startPos="780" endPos="780" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\include\sys32.h" />
+            <File firstVisibleLine="395" xOffset="0" scrollWidth="984" startPos="11238" endPos="11238" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\sys32.inc" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="992" startPos="0" endPos="0" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\include\process.h" />
+            <File firstVisibleLine="266" xOffset="0" scrollWidth="840" startPos="6383" endPos="6383" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\process.inc" />
+            <File firstVisibleLine="18" xOffset="0" scrollWidth="552" startPos="778" endPos="778" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\include\drivers\ramdiskfs.h" />
+            <File firstVisibleLine="443" xOffset="0" scrollWidth="552" startPos="7643" endPos="7519" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\drivers\ramdiskfs.inc" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="553" startPos="301" endPos="301" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\misc.inc" />
+            <File firstVisibleLine="83" xOffset="0" scrollWidth="552" startPos="1357" endPos="1359" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\appsrc\include\string.inc" />
+            <File firstVisibleLine="635" xOffset="0" scrollWidth="888" startPos="9189" endPos="9189" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\appsrc\shell\shell.asm" />
+            <File firstVisibleLine="76" xOffset="0" scrollWidth="384" startPos="1761" endPos="1761" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\appsrc\ls\ls.asm" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="776" startPos="0" endPos="0" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\boot\bootsect.asm" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="560" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\boot\bootsect.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="552" startPos="0" endPos="0" selMode="0" lang="Pascal" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\drivers\console.inc" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="552" startPos="0" endPos="0" selMode="0" lang="Pascal" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\drivers\i8259A.inc" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="688" startPos="0" endPos="0" selMode="0" lang="Pascal" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\drivers\keyboard.inc" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="472" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\include\ascii.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="296" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\include\drivers\console.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="232" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\include\drivers\i8259A.h" />
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="448" startPos="0" endPos="0" selMode="0" lang="C++" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\include\drivers\keyboard.h" />
+        </mainView>
+        <subView activeIndex="0">
+            <File firstVisibleLine="0" xOffset="0" scrollWidth="896" startPos="263" endPos="277" selMode="0" lang="Normal Text" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\syscalls doc.txt" />
+            <File firstVisibleLine="30" xOffset="0" scrollWidth="864" startPos="221" endPos="221" selMode="0" lang="Assembly" encoding="-1" filename="F:\Projects\Asm\FasmPro\Piscis\MemMap.txt" />
+        </subView>
+    </Session>
+</NotepadPlus>
