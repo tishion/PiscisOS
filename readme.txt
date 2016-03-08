@@ -6,17 +6,15 @@ Source code of the PiscisOS.
 
 build:
 
-1. install Flat assembler, add the environment path.
+1. install Flat assembler, add the environment path
 
 2. build the boot sector
+  2.1. cd  X:\xxxxx\PiscisOS\src\boot
+  2.2. run "fasm bootsect.asm", you will get bootsect.bin
 
-3. cd  X:\xxxxx\PiscisOS\src\boot
+3. build kernel
+  3.1. cd  X:\xxxxx\PiscisOS\src\
+  3.2. run "fasm pkernel.asm", then you will get pkernel.bin
 
-4. run "fasm bootsect.asm", you will get bootsect.bin
-
-5. cd  X:\xxxxx\PiscisOS\src\
-
-6. run "fasm pkernel.asm", then you will get the pkernel.bin
-
-7. make image file.....
+4. make image file.....
 
