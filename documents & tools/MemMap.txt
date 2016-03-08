@@ -25,24 +25,24 @@
 PCB DEFINATION
 
 	Pcb_strcuct:
-	+00h	dword		进程PID
-	+04h	dword		父进程PID
-	+08h	dword		保留
-	+0ch	dword		保留
-	+10h	dword		镜像在物理内存中的起始地址
-	+14h	dword		进程所使用的系统调用TSS描述符索引号
-	+18h	dword		保留
-	+1ch	dword		保留
-	+20h	dword		进程Tick数
-	+24h	dword		保留
-	+28h	dword		保留
-	+2ch	dword		保留
-	+30h	byte		进程状态
-	+31h	byte		PCB状态
-	+32h	word		保留
-    +34h    dword		正在等待的进程PID
-	+38h	dword		保留
-	+3ch	dword		保留
+	+00h	dword		PID(process identifier)
+	+04h	dword		parent PID
+	+08h	dword		reserved
+	+0ch	dword		reserved
+	+10h	dword		base memory address of the process image 
+	+14h	dword		index of syscall TSS descriptor this process is using
+	+18h	dword		reserved
+	+1ch	dword		reserved
+	+20h	dword		Tick count
+	+24h	dword		reserved
+	+28h	dword		reserved
+	+2ch	dword		reserved
+	+30h	byte		process status
+	+31h	byte		PCB Status
+	+32h	word		reserved
+    +34h    dword		PID of the process which is waiting for this process
+	+38h	dword		reserved
+	+3ch	dword		reserved
 		
 ;				00004F40
 ;				00004FA0	
