@@ -1,0 +1,51 @@
+
+; Example of making 32-bit PE program as raw code and data
+
+format PE GUI
+entry start
+
+section '.text' code readable executable
+
+  start:
+
+	call [GetCommandLineA]
+  
+	push	0
+	push	_caption
+	push	eax
+	push	0
+	call	[MessageBoxA]
+
+	push	0
+	call	[ExitProcess]
+
+section '.data' data readable writeable
+
+  _caption db 'Current Commandline is:',0
+  _message db 'Hello World!',0
+
+section '.idata' import data readable writeable
+
+  dd 0,0,0,RVA kernel_name,RVA kernel_table
+  dd 0,0,0,RVA user_name,RVA user_table
+  dd 0,0,0,0,0
+
+  kernel_table:
+    ExitProcess dd RVA _ExitProcess
+	GetCommandLineA dd RVA _GetCommandLineA
+    dd 0
+  user_table:
+    MessageBoxA dd RVA _MessageBoxA
+    dd 0
+
+  kernel_name db 'KERNEL32.DLL',0
+  user_name db 'USER32.DLL',0
+
+  _ExitProcess dw 0
+    db 'ExitProcess',0
+  _MessageBoxA dw 0
+    db 'MessageBoxA',0
+  _GetCommandLineA dw 0
+    db 'GetCommandLineA',0
+
+section '.reloc' fixups data readable discardable	; needed for Win32s

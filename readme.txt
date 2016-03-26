@@ -3,6 +3,11 @@ tishion 2012/06/08
 
 Source code of the PiscisOS.
 
+if you want build in one batch file
+just run build.bat
+
+
+if you want to build some components, you can do as follows
 
 build:
 
@@ -17,4 +22,3 @@ build:
   3.2. run "fasm pkernel.asm", then you will get pkernel.bin
 
 4. make image file.....
-

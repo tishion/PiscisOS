@@ -1,0 +1,43 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;
+;;			ASCII Code define
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Ascii code control char
+ASC_CC_NULL		EQU	00H
+ASC_CC_SOH		EQU 01H
+ASC_CC_STX		EQU	02H
+ASC_CC_ETX		EQU	03H
+ASC_CC_EOT		EQU	04H
+ASC_CC_ENQ		EQU	05H
+ASC_CC_ACK		EQU	06H
+ASC_CC_BEEL		EQU	07H
+ASC_CC_BS		EQU	08H
+ASC_CC_HT		EQU	09H
+ASC_CC_LF		EQU	0AH
+ASC_CC_VT		EQU	0BH
+ASC_CC_FF		EQU 0CH
+ASC_CC_CR		EQU	0DH
+ASC_CC_SO		EQU	0EH
+ASC_CC_S_I		EQU	0FH
+ASC_CC_DEL		EQU	10H
+ASC_CC_DC1		EQU	11H
+ASC_CC_DC2		EQU 12H
+ASC_CC_DC3		EQU 13H
+ASC_CC_DC4		EQU	14H
+ASC_CC_NAK		EQU 15H
+ASC_CC_SYN		EQU 16H
+ASC_CC_ETB		EQU 17H
+ASC_CC_CAN		EQU 18H
+ASC_CC_EM		EQU	19H
+ASC_CC_SUB		EQU	1AH
+ASC_CC_ESC		EQU 1BH
+ASC_CC_FS		EQU	1CH
+ASC_CC_GS		EQU	1DH
+ASC_CC_RS		EQU	1EH
+ASC_CC_US		EQU	1FH
+
+;;Ascii Code extend char
+;;80H~FFH
+;;;;;;;;;;;;;;;;
