@@ -3,7 +3,7 @@ tishion 2012/06/08
 
 Source code of the PiscisOS.
 
-if you want build in one batch file
+if you want to build in one step
 just run build.bat
 
 
