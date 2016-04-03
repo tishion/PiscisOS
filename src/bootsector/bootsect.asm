@@ -12,7 +12,7 @@ use16
 	; BPB_start
     jmp short Main						;jmp to Main code
     nop									;nop
-	bsOEMString		db "PicsicOS"		; OEM String,8 bytes ASCII code
+	bsOEMString		db "PiscisOS"		; OEM String,8 bytes ASCII code
     bsSectSize		dw 0x0200 		    ; Bytes per sector
     bsClusterSize	db 0x01				; Sectors per cluster
     bsReservedSect	dw 0x0001			; # of reserved sectors
@@ -29,7 +29,7 @@ use16
 					db 0x00				; not used for anything
     bsBootSign		db 0x29 		    ; boot signature 29h
     bsVolumeID		dd 0x0214FABE		; Disk volume ID also used for temp sector # / # sectors to load
-    bsVolumeLabel	db 'PicsicOSVOL'	; Volume Label
+    bsVolumeLabel	db 'PiscisOSVOL'	; Volume Label
     bsFSType		db 'FAT12    ' 	  	; File System type <- FAT 12 File system
 	;BPB_end
 
