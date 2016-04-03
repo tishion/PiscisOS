@@ -9,7 +9,9 @@ set FASM_PATH=%PROJ_ROOT%tools\Flat Assembler\FASM.EXE
 set SRC_ROOT=%PROJ_ROOT%src\
 set SRC_APPS=%SRC_ROOT%apps\
 set OUT_ROOT=%PROJ_ROOT%out\
-set OUT_APPS=%OUT_ROOT%\bin\
+set OUT_APPS=%OUT_ROOT%bin\
+set MTOOL_ROOT=%PROJ_ROOT%tools\mtools\
+set IMG_PATH=%PROJ_ROOT%image\piscisos.img
 
 cd /d %PROJ_ROOT%
 
@@ -49,6 +51,33 @@ for /R "%SRC_APPS%" %%i in (*.asm) do (
 )
 echo.
 
-echo ====== Building OS image... ======
+echo ====== Burning OS image... ======
+
+echo +Creating image file with bootsector...
+%MTOOL_ROOT%mformat.exe -f 1440 -v PiscisOSVOL -B %OUT_ROOT%bootsector -C -i %IMG_PATH% ::	
+
+echo +Copying perkenel.bin to image file system...
+%MTOOL_ROOT%mcopy.exe -i %IMG_PATH% %OUT_ROOT%pkernel.bin ::
+
+echo +Copying shell to image file system...
+%MTOOL_ROOT%mcopy.exe -i %IMG_PATH% %OUT_ROOT%shell ::
+
+echo +Create bin folder in image file system...
+%MTOOL_ROOT%mmd.exe   -i %IMG_PATH% ::bin
+echo +Copying all applications to image file system...
+%MTOOL_ROOT%mcopy.exe -i %IMG_PATH% %OUT_ROOT%bin\* ::bin
+
 
 :_l_end
+
+
+
+
+
+
+
+
+
+
+
+
