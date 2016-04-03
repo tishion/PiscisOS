@@ -9,15 +9,17 @@ set FASM_PATH=%PROJ_ROOT%tools\Flat Assembler\FASM.EXE
 set SRC_ROOT=%PROJ_ROOT%src\
 set SRC_APPS=%SRC_ROOT%apps\
 set OUT_ROOT=%PROJ_ROOT%out\
+set IMG_ROOT=%PROJ_ROOT%image\
+set IMG_PATH=%IMG_ROOT%piscisos.img
 set OUT_APPS=%OUT_ROOT%bin\
 set MTOOL_ROOT=%PROJ_ROOT%tools\mtools\
-set IMG_PATH=%PROJ_ROOT%image\piscisos.img
 
 cd /d %PROJ_ROOT%
 
 rem create output folders
 if not exist "%OUT_ROOT%" mkdir "%OUT_ROOT%"
 if not exist "%OUT_APPS%" mkdir "%OUT_APPS%"
+if not exist "%IMG_ROOT%" mkdir "%IMG_ROOT%"
 
 rem build bootsector file
 echo ====== Building bootsector... ====== 
