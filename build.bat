@@ -85,6 +85,8 @@ if not %errorlevel% == 0 (
 	goto _l_end
 )
 
+echo Build and burn done successfully!
+echo Output floppy image file: %IMG_PATH%
 :_l_end
 
 
