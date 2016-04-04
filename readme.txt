@@ -57,14 +57,6 @@ Output floppy image file: F:\Private Proj\PiscisOS\image\piscisos.img
 Now you have got the image file and you can load it with virtual machine.
 
 
-
-
-
-
-
-
-
-
 =================================
 tishion 2012/06/08
 
