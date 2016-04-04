@@ -56,19 +56,34 @@ echo.
 echo ====== Burning OS image... ======
 
 echo +Creating image file with bootsector...
-%MTOOL_ROOT%mformat.exe -f 1440 -v PiscisOSVOL -B %OUT_ROOT%bootsector -C -i %IMG_PATH% ::	
+"%MTOOL_ROOT%mformat.exe" -f 1440 -v PiscisOSVOL -B "%OUT_ROOT%bootsector" -C -i "%IMG_PATH%" ::
+if not %errorlevel% == 0 (
+	goto _l_end
+)	
 
 echo +Copying perkenel.bin to image file system...
-%MTOOL_ROOT%mcopy.exe -i %IMG_PATH% %OUT_ROOT%pkernel.bin ::
+"%MTOOL_ROOT%mcopy.exe" -i "%IMG_PATH%" "%OUT_ROOT%pkernel.bin" ::
+if not %errorlevel% == 0 (
+	goto _l_end
+)
 
 echo +Copying shell to image file system...
-%MTOOL_ROOT%mcopy.exe -i %IMG_PATH% %OUT_ROOT%shell ::
+"%MTOOL_ROOT%mcopy.exe" -i "%IMG_PATH%" "%OUT_ROOT%shell" ::
+if not %errorlevel% == 0 (
+	goto _l_end
+)
 
 echo +Create bin folder in image file system...
-%MTOOL_ROOT%mmd.exe   -i %IMG_PATH% ::bin
-echo +Copying all applications to image file system...
-%MTOOL_ROOT%mcopy.exe -i %IMG_PATH% %OUT_ROOT%bin\* ::bin
+"%MTOOL_ROOT%mmd.exe"   -i "%IMG_PATH%" ::bin
+if not %errorlevel% == 0 (
+	goto _l_end
+)
 
+echo +Copying all applications to image file system...
+"%MTOOL_ROOT%mcopy.exe" -i "%IMG_PATH%" "%OUT_ROOT%bin\*" ::bin
+if not %errorlevel% == 0 (
+	goto _l_end
+)
 
 :_l_end
 
