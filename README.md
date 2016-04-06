@@ -10,7 +10,7 @@ Features of PiscisOS:
 PiscisOS is a very simple system, I write it just for learning some knowledge about x86 protect model. You know the file system used by PiscisOS is very very old. But this is not the key point, if you are interested in this project, you can replace the filesystem with whatever you want. :)
 
 ### Build PiscisOS
-For one step building & burning image files, you cna clone the repository and just run the build.bat.
+For one step building & burning image files, you can clone the repository and just run the build.bat.
 ```
 F:\Private Proj\PiscisOS>build.bat
 ====== Building bootsector... ======
@@ -55,29 +55,3 @@ Build and burn done successfully!
 Output floppy image file: F:\Private Proj\PiscisOS\image\piscisos.img
 ```
 Now you have got the image file and you can load it with virtual machine.
-
-
-=================================
-tishion 2012/06/08
-
-Source code of the PiscisOS.
-
-if you want to build in one step
-just run build.bat
-
-
-if you want to build some components, you can do as follows
-
-build:
-
-1. install Flat assembler, add the environment path
-
-2. build the boot sector
-  2.1. cd  X:\xxxxx\PiscisOS\src\boot
-  2.2. run "fasm bootsect.asm", you will get bootsect.bin
-
-3. build kernel
-  3.1. cd  X:\xxxxx\PiscisOS\src\
-  3.2. run "fasm pkernel.asm", then you will get pkernel.bin
-
-4. make image file.....
