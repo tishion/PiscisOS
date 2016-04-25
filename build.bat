@@ -3,6 +3,9 @@ rem Build batch file for Piscos OS
 rem Author: Tishion (tishion#163.com)
 rem 2016-03-26 11:58:38
 
+set RUN=%~1%
+echo %RUN%
+
 rem change work directory to build folder
 set PROJ_ROOT=%~dp0
 set FASM_PATH=%PROJ_ROOT%tools\Flat Assembler\FASM.EXE
@@ -11,6 +14,7 @@ set SRC_APPS=%SRC_ROOT%apps\
 set OUT_ROOT=%PROJ_ROOT%out\
 set IMG_ROOT=%PROJ_ROOT%image\
 set IMG_PATH=%IMG_ROOT%piscisos.img
+set BOCHS_SCRIPT=%IMG_ROOT%bochsrc.bxrc
 set OUT_APPS=%OUT_ROOT%bin\
 set MTOOL_ROOT=%PROJ_ROOT%tools\mtools\
 
@@ -73,7 +77,7 @@ if not %errorlevel% == 0 (
 	goto _l_end
 )
 
-echo +Create bin folder in image file system...
+echo +Creating bin folder in image file system...
 "%MTOOL_ROOT%mmd.exe"   -i "%IMG_PATH%" ::bin
 if not %errorlevel% == 0 (
 	goto _l_end
@@ -87,6 +91,14 @@ if not %errorlevel% == 0 (
 
 echo Build and burn done successfully!
 echo Output floppy image file: %IMG_PATH%
+
+echo +Creating bochs script...
+echo floppya: type=1_44, 1_44="%IMG_PATH%", status=inserted, write_protected=1 > %BOCHS_SCRIPT%
+
+if "%RUN%" == "-run" (
+	%BOCHS_SCRIPT%
+)
+
 :_l_end
 
 
