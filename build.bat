@@ -94,6 +94,7 @@ echo Output floppy image file: %IMG_PATH%
 
 echo +Creating bochs script...
 echo floppya: type=1_44, 1_44="%IMG_PATH%", status=inserted, write_protected=1 > %BOCHS_SCRIPT%
+echo Done!
 
 if "%RUN%" == "-run" (
 	%BOCHS_SCRIPT%
