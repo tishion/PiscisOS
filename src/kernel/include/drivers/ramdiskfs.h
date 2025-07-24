@@ -4,7 +4,7 @@
 ;;	
 ;;	23/01/2012
 ;;	Copyright (C) tishion
-;;	E-Mail:tishion@163.com
+;;	https://github.com/tishion/PiscisOS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 DIRITEM_SIZE			equ 20h

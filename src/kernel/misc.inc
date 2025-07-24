@@ -1,10 +1,10 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;	misc.inc of the PiscisOS
-;;	Sring and Memory functions
+;;	String and Memory functions
 ;;	
 ;;	23/01/2012
 ;;	Copyright (C) tishion
-;;	E-Mail:tishion@163.com
+;;	https://github.com/tishion/PiscisOS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 macro m_memcopy

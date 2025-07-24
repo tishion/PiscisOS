@@ -4,40 +4,42 @@
 ;;	
 ;;	23/01/2012
 ;;	Copyright (C) tishion
-;;	E-Mail:tishion@163.com
+;;	https://github.com/tishion/PiscisOS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;
-;;			GDTs
-;;
+;; GDTs (Global Descriptor Table entries)
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-    ; DESC	STRUC			  ;存储段描述符结构
-    ; LIMITL		DW      0 ;段界限低16位
-    ; BASEL			DW      0 ;基地址低16位
-    ; BASEM			DB      0 ;基地址中间8位
-    ; LIMITH&ATTRIB	DW      0 ;段属性[G=1,D=1,0,AVL=1]+段界限的高4位+段属性[P=1,DPL,DT=1,TYPE]
-    ; BASEH			DB      0 ;基地址的高8位
-    ; DESC	ENDS
+    ; GDT           STRUC         ; Segment descriptor structure
+    ; LIMITL        DW      0     ; Lower 16 bits of segment limit
+    ; BASEL         DW      0     ; Lower 16 bits of base address
+    ; BASEM         DB      0     ; Middle 8 bits of base address
+    ; LIMITH&ATTRIB DW      0     ; Attributes [G=1, D=1, 0, AVL=1] + upper 4 bits of segment limit + attributes [P=1, DPL, DT=1, TYPE]
+    ; BASEH         DB      0     ; Upper 8 bits of base address
+    ; GDT           ENDS
 
 
-    ; GATE     STRUC      ;门描述符结构类型定义
-    ; OFFSETL  DW      0  ;32位偏移的低16位
-    ; SELECTOR DW      0  ;选择子
-    ; DCOUNT   DB      0  ;0000+双字计数字段
-    ; GTYPE    DB      0  ;P,DPL,DT=0,TYPE
-    ; OFFSETH  DW      0  ;32位偏移的高16位
-    ; GATE     ENDS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; GATE descriptor structure definition
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+    ; GATE          STRUC          ; Gate descriptor structure type definition
+    ; OFFSETL       DW      0      ; Lower 16 bits of 32-bit offset
+    ; SELECTOR      DW      0      ; Segment selector
+    ; DCOUNT        DB      0      ; 0000 + double-word count field
+    ; GTYPE         DB      0      ; P, DPL, DT = 0, TYPE
+    ; OFFSETH       DW      0      ; Upper 16 bits of 32-bit offset
+    ; GATE          ENDS
 
 ;=======================================================
-;stack_size_int					equ	1024
-;stack_zize_sysc				equ 4096
-; max_interrupts				equ 64	
-; max_processes					equ 250
-; tss_block_interrupt_base		equ 02a0000h
-; tss_block_syscall_base		equ 02a8000h
-; tss_block_process_base		equ 0700000h
-; tss_unit_size					equ 128
-; tss_unit_process_size			equ (128+8192)
+; stack_size_int            equ	1024
+; stack_zize_sysc           equ 4096
+; max_interrupts            equ 64
+; max_processes             equ 250
+; tss_block_interrupt_base  equ 02a0000h
+; tss_block_syscall_base    equ 02a8000h
+; tss_block_process_base    equ 0700000h
+; tss_unit_size             equ 128
+; tss_unit_process_size     equ (128+8192)
 ;========================================================
 align 4
 gdts:
@@ -852,8 +854,6 @@ irq00:
 	;get current process info
 	mov edi, [pcb_current_no]
 	imul edi, 8
-	;This mistake is so stupid. 
-	;mov [tss_process0_l-gdts+edi+5], word 01010000b*256+11101001b ;error ):
 	mov [tss_process0_l+edi+5], word 01010000b*256+11101001b	;corrected (: restet the Descriptor of B flag
 
 	; mov edi, [pcb_current_base]

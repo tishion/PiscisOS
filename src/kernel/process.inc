@@ -1,3 +1,12 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	sys32.inc of the PiscisOS
+;;	
+;;	
+;;	23/01/2012
+;;	Copyright (C) tishion
+;;	https://github.com/tishion/PiscisOS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;processes
 set_gdt_process_tss_descriptor:		
@@ -10,7 +19,7 @@ set_gdt_process_tss_descriptor:
 	shr eax, 16
 	mov [tss_process0_l+edi+4], al									;SegmentBase(16~23bit)
 	mov [tss_process0_l+edi+7], ah									;SegmentBase(24~31bit)
-	mov [tss_process0_l+edi+5], word 01010000b*256+11101001b		;SegmentAttribut(DPL=3,TYPE=9 386TSS)
+	mov [tss_process0_l+edi+5], word 01010000b*256+11101001b		;SegmentAttribute(DPL=3,TYPE=9 386TSS)
 	add ecx, tss_unit_process_size
 	add edi, 8
 	cmp edi, 8*(max_processes+3)
@@ -25,7 +34,7 @@ set_gdt_process_taskgate_descriptor:
 .next:
 	mov [tg_process0_l+edi+0], word 0
 	mov [tg_process0_l+edi+2], dx
-	mov [tg_process0_l+edi+4], word 11100101b*256			;SegmentAttribut(DPL=3,TYPE=9 task gate)
+	mov [tg_process0_l+edi+4], word 11100101b*256			;SegmentAttribute(DPL=3,TYPE=9 task gate)
 	mov [tg_process0_l+edi+6], word 0
 	add dx, 8
 	add edi, 8
@@ -272,7 +281,7 @@ check_set_app_parameters:
 	
 create_process:
 ;;in	esi:file name
-;;		eax:argments buffer £¨PA£©
+;;		eax:argments buffer ï¿½ï¿½PAï¿½ï¿½
 ;;out	eax:pid
 	push ebx
 	push edx
@@ -471,10 +480,3 @@ terminate_process:
 	pop eax
 	sti
 	ret 
-
-	
-	
-	
-	
-	
-	

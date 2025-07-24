@@ -1,4 +1,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	Application for PiscisOS: Helloworld
+;;	Assembled by Flat Assembler
+;;	
+;;	23/04/2012
+;;	Copyright (C) tishion
+;;	https://github.com/tishion/PiscisOS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;functions about string operation
 strcopy:
 ;;in	esi:buffer of source

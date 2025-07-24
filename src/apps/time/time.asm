@@ -1,3 +1,12 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	Application for PiscisOS: Helloworld
+;;	Assembled by Flat Assembler
+;;	
+;;	23/04/2012
+;;	Copyright (C) tishion
+;;	https://github.com/tishion/PiscisOS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 use32
 
 	org 00h

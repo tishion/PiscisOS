@@ -4,8 +4,10 @@
 ;;	
 ;;	23/01/2012
 ;;	Copyright (C) tishion
-;;	E-Mail:tishion@163.com
+;;	https://github.com/tishion/PiscisOS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+
 include ".\include\sys32.h"
 include ".\include\process.h"
 include ".\include\ascii.h"

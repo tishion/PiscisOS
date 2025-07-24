@@ -1,3 +1,12 @@
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;	Application for PiscisOS: Helloworld
+;;	Assembled by Flat Assembler
+;;	
+;;	23/04/2012
+;;	Copyright (C) tishion
+;;	https://github.com/tishion/PiscisOS
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 DIRITEM_SIZE			equ 20h
 FILEITEM_NAME 			equ 00h
 FILEITEM_EXTEND			equ 08h

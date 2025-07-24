@@ -4,8 +4,9 @@
 ;;	
 ;;	23/04/2012
 ;;	Copyright (C) tishion
-;;	E-Mail:tishion#163.com
+;;	https://github.com/tishion/PiscisOS
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 use32
 
 	org 00h
